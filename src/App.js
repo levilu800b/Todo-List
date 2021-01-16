@@ -1,19 +1,26 @@
-import React from 'react';
-import './App.css';
-import TodoInput from './components/TodoInput';
-import TodoList from './components/TodoList';
-import 'bootstrap/dist/css/bootstrap.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Add from "./Add";
+import Links from "./Links";
+import VisibleTodoList from "./VisibleTodoList";
 
-function App() {
-  return (
-    <container>
-    <div className="App m-5">
-      <h1>TODO APP</h1>
-      <TodoInput />
-      <TodoList />
-    </div>
-    </container>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Navbar bg="info" variant="dark">
+          <Navbar.Brand> Todo Redux App</Navbar.Brand>
+        </Navbar>
+        <Container>
+          <Add/>
+          <Links/>
+          <VisibleTodoList/>
+        </Container>
+      </>
+    );
+  }
 }
 
 export default App;
